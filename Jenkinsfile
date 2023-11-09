@@ -16,7 +16,7 @@ pipeline{
         }
         stage("build"){
             steps{
-                sh 'docker image build -t newsanta2 .'
+                sh 'docker image build -t newsanta2$BUILD_TAG .'
             }
         }
         stage("run"){
