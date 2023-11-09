@@ -24,5 +24,10 @@ pipeline{
                 sh 'docker run -d -P newsanta2$BUILD_TAG'
             }
         }
+        stage("upload"){
+            steps{
+                nexusArtifactUploader artifacts: [[artifactId: 'secretsanta', classifier: '', file: 'secretsanta-generator/target/secretsanta-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'nexus', groupId: 'secretsaanta', nexusUrl: '13.233.167.66:32769', nexusVersion: 'nexus3', protocol: 'http', repository: 'secretsanta', version: '1.0.0-snapshot'
+            }
+        }
     }
 }
