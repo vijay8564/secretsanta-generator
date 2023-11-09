@@ -9,9 +9,9 @@ pipeline{
         stage("sonar"){
             steps{
                 sh "mvn clean verify sonar:sonar \
-                 -Dsonar.projectKey=pipeline \
-                 -Dsonar.host.url=http://13.233.167.66:32768 \
-                 -Dsonar.login=sqp_4722a73f92322f57c402e5be19898342eec5a064"
+                -Dsonar.projectKey=test-2 \
+                -Dsonar.host.url=http://13.233.167.66:32768 \
+                -Dsonar.login=sqp_3806ff90f614893a00eb0b0657d0e04312fb6f14"
             }
         }
         stage("build"){
