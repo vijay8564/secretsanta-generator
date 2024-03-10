@@ -10,7 +10,10 @@ pipeline{
         }
         stage('build'){
             steps{
-                sh "mvn clean verify sonar:sonar -Dsonar.projectKey=secret-santa"
+                sh "mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=secret-santa \
+  -Dsonar.host.url=http://13.71.25.235:32769 \
+  -Dsonar.login=sqp_04358c3f228ea005af6043eb9da6d576f05434a6"
             }
         }
     }
