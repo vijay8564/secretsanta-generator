@@ -16,5 +16,9 @@ pipeline{
   -Dsonar.login=sqp_04358c3f228ea005af6043eb9da6d576f05434a6"
             }
         }
+        stage('docker'){
+            steps{
+                sh " docker image build -t santa ."
+            }
     }
 }
